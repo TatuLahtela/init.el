@@ -91,6 +91,11 @@
 
 
 
+;;; No bells
+
+(setq ring-bell-function 'ignore)
+(setq visible-bell t)
+
 ;;; Rainbow delimiters
 
 (use-package rainbow-delimiters
