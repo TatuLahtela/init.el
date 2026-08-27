@@ -394,7 +394,7 @@
 (use-package mu4e
   :ensure nil
   :defer t
-  :load-path "/usr/share/emacs/site-lisp/elpa-src/mu4e-1.10.8/"
+  :load-path "/usr/share/emacs/site-lisp/mu4e"
   :config
   (setq mail-user-agent 'mu4e-user-agent)
   (setq mu4e-maildir "/home/lahtela/Mail/lahtela"
