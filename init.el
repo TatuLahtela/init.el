@@ -318,12 +318,11 @@
 
 (setq switch-to-buffer-obey-display-actions t)
 
-(defun my-toggle-window-dedicated-strong
-    """
-    Same as toggle-window-dedicated but with Strong dedication
-    """
-(interactive)
-)
+(defun my-toggle-window-dedicated-strong (&optional window)
+  "Same as `toggle-window-dedicated' but with strong dedication.
+WINDOW defaults to the selected window."
+  (interactive)
+  (toggle-window-dedicated window t t))
 
 ;;; No littering
 
