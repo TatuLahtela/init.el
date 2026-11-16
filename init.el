@@ -316,6 +316,7 @@
 
 (winner-mode 1)
 
+(setq switch-to-buffer-obey-display-actions t)
 
 ;;; No littering
 
