@@ -160,8 +160,8 @@
   :bind (:map corfu-map
               ("<right>" . corfu-quit)
               ("<left>"  . corfu-quit))
-  :init
-  (global-corfu-mode))
+  ;; Elisp only; lisp-interaction-mode (*scratch*) derives from it.
+  :hook (emacs-lisp-mode . corfu-mode))
 
 (use-package consult :defer t)
 
