@@ -487,6 +487,12 @@ WINDOW defaults to the selected window."
 (use-package agent-shell
   :config
   (add-to-list 'exec-path "/home/lahtela/.nvm/versions/node/v25.6.0/bin/")
+  (defvar my-agent-shell-map (make-sparse-keymap))
+  (global-set-key (kbd "C-c a") my-agent-shell-map)
+  (define-key my-agent-shell-map (kbd "r") #'agent-shell-restart)
+  (define-key my-agent-shell-map (kbd "f") #'agent-shell-insert-file)
 )
+
+
 
 ;;; init.el ends here
