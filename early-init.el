@@ -27,3 +27,6 @@
                 "~/git/Helen/odl/")))
 
 (setq custom-file "~/.emacs.d/custom.el")
+
+(if (eq system-type 'darwin)
+ (setenv "MACOSX_DEPLOYMENT_TARGET" "27.0"))
