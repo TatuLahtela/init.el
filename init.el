@@ -69,8 +69,12 @@
 ;;; Theme and fonts
 
 (use-package catppuccin-theme
-  :init (setq catppuccin-flavor 'mocha)
-  :config (load-theme 'catppuccin t))
+  :init (setq catppuccin-flavor 'mocha))
+;;  :config (load-theme 'catppuccin t))
+
+
+(load-theme 'modus-vivendi-tinted)
+
 
 (use-package nerd-icons)
 
@@ -375,12 +379,14 @@ WINDOW defaults to the selected window."
   (setq treesit-langs-grammar-dir (expand-file-name "elpa/treesit-langs" user-emacs-directory))
   (setq treesit-extra-load-path (list treesit-langs-grammar-dir)))
 
-;;; vterm
+;;; vterm / ghostty
 
-(use-package vterm
-  :bind (:map my-other-map ("t" . vterm))
-  :config
-  (add-to-list 'vterm-eval-cmds '("update-pwd" (lambda (path) (setq default-directory path)))))
+;;(use-package vterm
+;;  :bind (:map my-other-map ("t" . vterm))
+;;  :config
+;;  (add-to-list 'vterm-eval-cmds '("update-pwd" (lambda (path) (setq default-directory path)))))
+
+(use-package ghostel :defer t)
 
 
 ;;; My capture org template
@@ -493,6 +499,8 @@ WINDOW defaults to the selected window."
   (define-key my-agent-shell-map (kbd "f") #'agent-shell-insert-file)
 )
 
+;;; Try packages
 
+(use-package try :defer f)
 
 ;;; init.el ends here
