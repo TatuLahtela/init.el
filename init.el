@@ -72,8 +72,8 @@
   :init (setq catppuccin-flavor 'mocha))
 ;;  :config (load-theme 'catppuccin t))
 
-
-(load-theme 'modus-vivendi-tinted)
+(require-theme 'modus-themes)
+(load-theme 'modus-operandi-tinted)
 
 
 (use-package nerd-icons)
