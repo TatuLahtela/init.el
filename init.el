@@ -118,6 +118,10 @@
   (indent-bars-prefer-character t))
 
 
+;;; Treemacs
+
+(use-package treemacs :defer t)
+
 ;;; (Ma)git
 
 (use-package transient :defer t)
