@@ -72,8 +72,21 @@
   :init (setq catppuccin-flavor 'mocha))
 ;;  :config (load-theme 'catppuccin t))
 
-(require-theme 'modus-themes)
-(load-theme 'modus-operandi-tinted)
+(use-package doom-themes
+  :custom
+  (doom-themes-enable-bold t)
+  (doom-themes-enable-italic t)
+  :config
+  (load-theme 'doom-tokyo-night t)
+  ;; Theme default is orange; make numbers blue
+  (set-face-foreground 'font-lock-number-face (doom-color 'blue))
+  ;; Flash the mode-line instead of beeping
+  (doom-themes-visual-bell-config)
+  ;; Better org-mode fontification
+  (doom-themes-org-config))
+
+;;(require-theme 'modus-themes)
+;;(load-theme 'modus-operandi-tinted)
 
 
 (use-package nerd-icons)
@@ -386,7 +399,11 @@ WINDOW defaults to the selected window."
 ;;  :config
 ;;  (add-to-list 'vterm-eval-cmds '("update-pwd" (lambda (path) (setq default-directory path)))))
 
-(use-package ghostel :defer t)
+(use-package ghostel
+  :defer t
+  ;; macOS /bin/bash 3.2 reads ~/.bash_profile in POSIX mode under ghostel's
+  ;; --posix injection (breaks fzf/zoxide); bash 5 honors ENV correctly.
+  :custom (ghostel-shell "/opt/homebrew/bin/bash"))
 
 
 ;;; My capture org template
