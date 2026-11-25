@@ -459,6 +459,11 @@ WINDOW defaults to the selected window."
 
 (use-package treemacs :defer t)
 
+;;; Macos specific
+
+(if (eq system-type 'darwin)
+    (progn (setq ns-right-option-modifier 'none)))
+
 ;;; yaml
 
 (use-package yaml-mode :mode "\\.ya?ml\\'")
