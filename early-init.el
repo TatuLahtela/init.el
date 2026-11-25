@@ -3,6 +3,8 @@
 (push '(tool-bar-lines . 0) default-frame-alist)
 (push '(menu-bar-lines . 0) default-frame-alist)
 (push '(vertical-scroll-bars) default-frame-alist)
+(push '(ns-appearance . dark) default-frame-alist)
+(push '(ns-transparent-titlebar . t) default-frame-alist)
 
 
 ;; Prevent built-in package.el from loading

@@ -80,6 +80,8 @@
   (load-theme 'doom-tokyo-night t)
   ;; Theme default is orange; make numbers blue
   (set-face-foreground 'font-lock-number-face (doom-color 'blue))
+  ;; Theme's window border is nearly invisible; make it a bit brighter
+  (set-face-foreground 'vertical-border "#414868")
   ;; Flash the mode-line instead of beeping
   (doom-themes-visual-bell-config)
   ;; Better org-mode fontification
@@ -98,13 +100,12 @@
 (use-package nerd-icons-dired
   :hook (dired-mode . nerd-icons-dired-mode))
 
+;; Single source of truth for the font (a separate default-frame-alist font
+;; gets overridden by this face spec whenever themes are re-applied).
 (set-face-attribute 'default nil
-                    :family "FiraMono Nerd Font"
+                    :family "IBM Plex Mono"
                     :weight 'regular
-                    :height 110)
-
-;; (add-to-list 'default-frame-alist '(font . "FiraMono Nerd Font-17"))
-(add-to-list 'default-frame-alist '(font . "IBM Plex Mono-17")) 
+                    :height 170)
 
 
 
