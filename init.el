@@ -87,6 +87,18 @@
   ;; Better org-mode fontification
   (doom-themes-org-config))
 
+;; Selected window slightly brighter than the rest: raise the default
+;; background a notch and give non-selected windows the theme's original bg.
+(use-package auto-dim-other-buffers
+  :after doom-themes
+  :config
+  (set-face-background 'default "#20212e")          ; theme bg is #1a1b26
+  (set-face-background (if (facep 'auto-dim-other-buffers)
+                           'auto-dim-other-buffers        ; v2.x face name
+                         'auto-dim-other-buffers-face)    ; older versions
+                       "#1a1b26")
+  (auto-dim-other-buffers-mode 1))
+
 ;;(require-theme 'modus-themes)
 ;;(load-theme 'modus-operandi-tinted)
 
