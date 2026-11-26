@@ -82,6 +82,9 @@
   (set-face-foreground 'font-lock-number-face (doom-color 'blue))
   ;; Theme's window border is nearly invisible; make it a bit brighter
   (set-face-foreground 'vertical-border "#414868")
+  ;; Mode line lighter than the window background instead of near-black
+  (set-face-background 'mode-line-active "#2f334d")
+  (set-face-background 'mode-line-inactive "#262838")
   ;; Flash the mode-line instead of beeping
   (doom-themes-visual-bell-config)
   ;; Better org-mode fontification
