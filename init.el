@@ -124,9 +124,13 @@
 
 
 
-;;; line numbers
+;;; Line numbers
 
-(global-display-line-numbers-mode t)
+;; Only in editing buffers; skips comint, terminals, dired, magit, help, etc.
+(dolist (hook '(prog-mode-hook    ; programming languages, incl. *-ts-mode
+                text-mode-hook    ; org, markdown, plain text, git commits
+                conf-mode-hook))  ; .ini, .conf, .properties, dotfiles
+  (add-hook hook #'display-line-numbers-mode))
 
 ;;; No bells
 
