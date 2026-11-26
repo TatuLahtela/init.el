@@ -499,7 +499,10 @@ WINDOW defaults to the selected window."
 ;;; Macos specific
 
 (if (eq system-type 'darwin)
-    (progn (setq ns-right-option-modifier 'none)))
+    (progn (setq ns-right-option-modifier 'none)
+	   (set-frame-parameter nil 'alpha '(98 . 98))        ; current frame: (selected . unselected)
+	   (add-to-list 'default-frame-alist '(alpha . (98 . 98)))
+	   ))
 
 ;;; yaml
 
