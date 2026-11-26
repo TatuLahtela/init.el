@@ -124,6 +124,10 @@
 
 
 
+;;; line numbers
+
+(global-display-line-numbers-mode t)
+
 ;;; No bells
 
 (setq ring-bell-function 'ignore)
