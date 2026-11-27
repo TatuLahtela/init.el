@@ -71,7 +71,6 @@
 (use-package catppuccin-theme
   :defer t
   :init (setq catppuccin-flavor 'mocha))
-;;  :config (load-theme 'catppuccin t))
 
 (use-package doom-themes
   :custom
