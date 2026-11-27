@@ -258,6 +258,7 @@
 (use-package request-deferred :defer t)
 
 (use-package org-gtasks
+  :defer t
   :ensure nil
   :vc (:url "https://git.sr.ht/~jmasson/org-gtasks" :rev :newest))
 
