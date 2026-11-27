@@ -406,7 +406,7 @@ WINDOW defaults to the selected window."
 
 ;;; AI
 
-(use-package track-changes)
+(use-package track-changes :defer t)
 
 ;; (use-package copilot
 ;;   :ensure nil
@@ -433,11 +433,6 @@ WINDOW defaults to the selected window."
   (setq treesit-extra-load-path (list treesit-langs-grammar-dir)))
 
 ;;; vterm / ghostel
-
-;;(use-package vterm
-;;  :bind (:map my-other-map ("t" . vterm))
-;;  :config
-;;  (add-to-list 'vterm-eval-cmds '("update-pwd" (lambda (path) (setq default-directory path)))))
 
 (use-package ghostel
   :defer t
