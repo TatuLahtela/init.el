@@ -170,6 +170,11 @@
 (use-package magit
   :bind ([f8] . magit-status))
 
+(use-package magit
+  :bind ([f8] . magit-status)
+  :custom
+  (magit-diff-visit-prefer-worktree t))
+
 
 ;;; Minibuffer Completion Stack
 
@@ -346,6 +351,7 @@
 
 (use-package yasnippet :defer t)
 (use-package yasnippet-snippets :defer t)
+
 
 
 ;;; RG and other file finding stuff
