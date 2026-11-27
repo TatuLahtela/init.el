@@ -431,7 +431,7 @@ WINDOW defaults to the selected window."
   (setq treesit-langs-grammar-dir (expand-file-name "elpa/treesit-langs" user-emacs-directory))
   (setq treesit-extra-load-path (list treesit-langs-grammar-dir)))
 
-;;; vterm / ghostty
+;;; vterm / ghostel
 
 ;;(use-package vterm
 ;;  :bind (:map my-other-map ("t" . vterm))
