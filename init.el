@@ -519,6 +519,17 @@ WINDOW defaults to the selected window."
 	   (add-to-list 'default-frame-alist '(alpha . (98 . 98)))
 	   ))
 
+;; Title-bar double-click (zoom) in the NS port goes full-height first and
+;; only maximizes on a second click.  Promote full-height straight to
+;; maximized so it toggles maximize/restore like other macOS apps.
+(defun my-ns-zoom-to-maximized (frame)
+  (when (and (eq (framep frame) 'ns)
+             (eq (frame-parameter frame 'fullscreen) 'fullheight))
+    (run-at-time 0 nil (lambda ()
+                         (when (frame-live-p frame)
+                           (set-frame-parameter frame 'fullscreen 'maximized))))))
+(add-hook 'window-size-change-functions #'my-ns-zoom-to-maximized)
+
 ;;; yaml
 
 (use-package yaml-mode :mode "\\.ya?ml\\'")
