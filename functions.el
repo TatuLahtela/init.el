@@ -1,3 +1,4 @@
+;;; functions.el --- -*- lexical-binding: t; -*-
 (defun my-avy-goto-line ()
   "Avy goto line plus move the cursor to the end of line"
   (interactive)

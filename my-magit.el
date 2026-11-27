@@ -1,3 +1,4 @@
+;;; my-magit.el --- -*- lexical-binding: t; -*-
 (require 'json)
 (require 'url)
 
