@@ -517,13 +517,16 @@ WINDOW defaults to the selected window."
 
 (use-package treemacs :defer t)
 
+;;; Transparency
+
+(progn
+  (set-frame-parameter nil 'alpha '(98 . 98))
+  (add-to-list 'default-frame-alist '(alpha . (98 . 98))))
+
 ;;; Macos specific
 
 (if (eq system-type 'darwin)
-    (progn (setq ns-right-option-modifier 'none)
-	   (set-frame-parameter nil 'alpha '(98 . 98))        ; current frame: (selected . unselected)
-	   (add-to-list 'default-frame-alist '(alpha . (98 . 98)))
-	   ))
+    (progn (setq ns-right-option-modifier 'none)))
 
 ;; Title-bar double-click (zoom) in the NS port goes full-height first and
 ;; only maximizes on a second click.  Promote full-height straight to
