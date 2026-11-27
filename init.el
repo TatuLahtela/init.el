@@ -132,6 +132,10 @@
                 conf-mode-hook))  ; .ini, .conf, .properties, dotfiles
   (add-hook hook #'display-line-numbers-mode))
 
+;;; pixel scrolling
+
+(pixel-scroll-precision-mode t)
+
 ;;; No bells
 
 (setq ring-bell-function 'ignore)
@@ -436,9 +440,11 @@ WINDOW defaults to the selected window."
 
 (use-package ghostel
   :defer t
+  :config
   ;; macOS /bin/bash 3.2 reads ~/.bash_profile in POSIX mode under ghostel's
   ;; --posix injection (breaks fzf/zoxide); bash 5 honors ENV correctly.
-  :custom (ghostel-shell "/opt/homebrew/bin/bash"))
+  (when (eq system-type 'darwin)
+    (setopt ghostel-shell "/opt/homebrew/bin/bash")))
 
 
 ;;; My capture org template
