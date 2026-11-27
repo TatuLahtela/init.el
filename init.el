@@ -398,6 +398,7 @@ WINDOW defaults to the selected window."
 ;;; QML
 
 (use-package qml-mode
+  :defer t
   :mode "\\.qml\\'"
   :config
   (setq qml-basic-offset 4))
