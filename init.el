@@ -168,12 +168,17 @@
 (use-package transient :defer t)
 
 (use-package magit
-  :bind ([f8] . magit-status))
-
-(use-package magit
   :bind ([f8] . magit-status)
   :custom
   (magit-diff-visit-prefer-worktree t))
+
+;; Refresh visible magit-status buffers when the repo changes outside Emacs.
+(use-package magit-autorefresh
+  :ensure nil
+  :vc (:url "https://github.com/TatuLahtela/magit-autorefresh" :rev :newest)
+  :after magit
+  :config
+  (magit-autorefresh-mode 1))
 
 
 ;;; Minibuffer Completion Stack
