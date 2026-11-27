@@ -69,6 +69,7 @@
 ;;; Theme and fonts
 
 (use-package catppuccin-theme
+  :defer t
   :init (setq catppuccin-flavor 'mocha))
 ;;  :config (load-theme 'catppuccin t))
 
