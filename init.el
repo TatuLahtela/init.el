@@ -223,7 +223,13 @@
   ;; Elisp only; lisp-interaction-mode (*scratch*) derives from it.
   :hook (emacs-lisp-mode . corfu-mode))
 
-(use-package consult :defer t)
+(use-package consult
+  :bind ("C-x b" . consult-buffer)
+  :config
+  (with-eval-after-load 'org
+    (dolist (f org-agenda-files)
+      (add-to-list 'consult-buffer-filter
+                   (concat "\\`" (regexp-quote (file-name-nondirectory f)) "\\'")))))
 
 
 ;;; Random packages
