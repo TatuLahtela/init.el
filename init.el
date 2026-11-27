@@ -581,6 +581,6 @@ WINDOW defaults to the selected window."
 
 ;;; Try packages
 
-(use-package try :defer f)
+(use-package try :defer t)
 
 ;;; init.el ends here
