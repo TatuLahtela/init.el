@@ -512,11 +512,6 @@ WINDOW defaults to the selected window."
 
 (use-package swagg :defer t)
 
-
-;; treemacs
-
-(use-package treemacs :defer t)
-
 ;;; Transparency
 
 (progn
