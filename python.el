@@ -1,3 +1,4 @@
+;;; python.el --- -*- lexical-binding: t; -*-
 ;;; Python Development
 
 (use-package python

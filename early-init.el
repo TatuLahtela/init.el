@@ -1,3 +1,4 @@
+;;; early-init.el --- -*- lexical-binding: t; -*-
 ;;; Hide 
 
 (push '(tool-bar-lines . 0) default-frame-alist)
